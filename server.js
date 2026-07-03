@@ -430,17 +430,33 @@ app.get("/brand/accepted-influencers/:brandId", async (req, res) => {
 // Start Server
 const pathModule = require('path');
 const fs = require('fs');
-const distPath = pathModule.join(__dirname, 'dist/influencer-matching-system/browser');
+
+// Try to find built Angular app in multiple possible locations
+let distPath = null;
+const possiblePaths = [
+  pathModule.join(__dirname, 'dist/influencer-matching-system/browser'),  // Angular 18+ with browser build
+  pathModule.join(__dirname, 'dist/influencer-matching-system'),            // Direct dist folder
+  pathModule.join(__dirname, 'dist')                                        // Root dist folder
+];
+
+for (const path of possiblePaths) {
+  if (fs.existsSync(pathModule.join(path, 'index.html'))) {
+    distPath = path;
+    break;
+  }
+}
 
 // Check if built Angular app exists
-if (fs.existsSync(distPath)) {
+if (distPath) {
   app.use(express.static(distPath));
   
-  // Serve index.html for all routes (Angular routing)
-  app.get('*', (req, res) => {
+  // Serve index.html for all routes (Angular routing) - Express 5+ compatible
+  app.use((req, res) => {
     res.sendFile(pathModule.join(distPath, 'index.html'));
   });
   console.log('✅ Serving built Angular app from', distPath);
+} else {
+  console.log('⚠️  Warning: dist folder not found. Build Angular app with: npm run build');
 }
 
 const PORT = process.env.PORT || 8080;
