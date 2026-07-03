@@ -65,7 +65,9 @@ app.use(
 // ✅ Google OAuth Configuration
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const REDIRECT_URI = "http://localhost:8080/oauth-callback";
+const REDIRECT_URI = process.env.NODE_ENV === 'production'
+  ? `${process.env.APP_URL}/oauth-callback` || `${process.env.RENDER_EXTERNAL_URL}/oauth-callback`
+  : "http://localhost:8080/oauth-callback";
 const SCOPES = ["https://www.googleapis.com/auth/youtube.readonly"];
 
 const oauth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
@@ -108,6 +110,11 @@ const response = await axios.get(
   const data = items[0];
   console.log("Fetched YouTube data:", data);
   
+  // Determine frontend URL based on environment
+  const frontendUrl = process.env.NODE_ENV === 'production'
+    ? process.env.APP_URL || `${req.protocol}://${req.get('host')}`
+    : 'http://localhost:4200';
+  
   // Check if influencer already exists in the database
   const existingInfluencer = await Influencer.findOne({
     channelName: data.snippet.title,
@@ -116,7 +123,7 @@ const response = await axios.get(
   if (existingInfluencer) {
     console.log("Influencer exists, redirecting to dashboard...");
     res.redirect(
-      `http://localhost:4200/influencer-dashboard?id=${existingInfluencer._id}`
+      `${frontendUrl}/influencer-dashboard?id=${existingInfluencer._id}`
     );
   } else {
     console.log("Influencer does not exist, redirecting to details page...");
@@ -129,7 +136,7 @@ const response = await axios.get(
       videoCount: data.statistics.videoCount,
     }).toString();
   
-    res.redirect(`http://localhost:4200/influencer-details?${queryParams}`);
+    res.redirect(`${frontendUrl}/influencer-details?${queryParams}`);
   }
   
   } catch (error) {

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private baseUrl = 'http://localhost:8080'; // Backend API base URL
+  private baseUrl = window.location.origin; // Backend API base URL - auto-detects localhost or production
 
   constructor(private http: HttpClient) {}
 
