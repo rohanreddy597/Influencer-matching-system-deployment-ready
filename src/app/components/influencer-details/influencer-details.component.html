@@ -1,0 +1,30 @@
+<div class="influencer-details-container">
+  <h2>Influencer Details</h2>
+
+  <div class="row">
+    <!-- Influencer Information Section -->
+    <div class="col-md-6 influencer-info">
+      <img [src]="influencerData.profileImage" alt="Profile Image" class="profile-img"/>
+      <h3>{{ influencerData.channelName }}</h3>
+      <p><strong>Subscribers:</strong> {{ influencerData.subscribers }}</p>
+      <p><strong>Total Views:</strong> {{ influencerData.totalViews }}</p>
+      <p><strong>Video Count:</strong> {{ influencerData.videoCount }}</p>
+    </div>
+
+    <!-- Influencer Form Section -->
+    <div class="col-md-6 influencer-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="email" placeholder="Enter your email" class="form-control" required />
+
+      <label for="category">Category:</label>
+      <input type="text" id="category" [(ngModel)]="category" placeholder="Enter your category" class="form-control" />
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" [(ngModel)]="location" placeholder="Enter your location" class="form-control" />
+
+      <button (click)="registerInfluencer()" class="btn btn-primary register-btn w-100">Register</button>
+    </div>
+  </div>
+</div>
+
+  

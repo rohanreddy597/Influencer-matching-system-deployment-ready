@@ -1,0 +1,50 @@
+<div class="d-flex">
+  <!-- Sidebar -->
+  <aside id="sidebar" [class.collapsed]="isSidebarCollapsed ">
+      <div class="sidebar-logo">
+          <a href="#">Influencer Management</a>
+      </div>
+      <!-- Sidebar Navigation -->
+      <ul class="sidebar-nav p-0">
+         
+          <li class="sidebar-item">
+              <a  (click)="navigatetoDashboard() " class="sidebar-link">
+                  <i class="lni lni-home"></i>
+                  <span>Dashboard</span>
+              </a>
+          </li>
+          <li class="sidebar-item">
+              <a (click)=" navigateToProfile()" class="sidebar-link">
+                  <i class="lni lni-users"></i>
+                  <span>Profile</span>
+              </a>
+          </li>
+          <li class="sidebar-item">
+              <a (click)=" navigateToRequests()" class="sidebar-link">
+                  <i class="lni lni-checkmark-circle"></i>
+                  <span>View Requests</span>
+              </a>
+          </li>
+          <li class="sidebar-item">
+              <a  (click)="logOut()"class="sidebar-link text-danger">
+                  <i class="lni lni-exit"></i>
+                  <span>Logout</span>
+              </a>
+          </li>
+      </ul>
+      <!-- Sidebar Navigation Ends -->
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main">
+      <nav class="navbar navbar-expand">
+          <button class="toggler-btn" type="button" (click)="toggleSidebar()">
+              <i class="lni lni-text-align-left"></i>
+          </button>
+      </nav>
+      <main class="p-3">
+          <ng-content></ng-content>
+      </main>
+  </div>
+</div>
+

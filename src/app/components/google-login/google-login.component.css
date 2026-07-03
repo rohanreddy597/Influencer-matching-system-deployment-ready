@@ -1,0 +1,113 @@
+/* General reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Styles */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f2f5;
+  color: #333;
+}
+
+/* Layout for login container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Content with Image on the Left and Card on the Right */
+.login-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80%;
+}
+
+/* Image Styles */
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-left: 2rem;
+}
+
+/* Hover effect for the card */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.card p {
+  color: #777;
+  margin-bottom: 2rem;
+}
+
+/* Google Login Button Styles */
+.google-login-container {
+  display: flex;
+  justify-content: center;
+}
+
+.google-login-btn {
+  background-color: #4285f4;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.google-login-btn i {
+  margin-right: 10px;
+  font-size: 1.4rem;
+}
+
+.google-login-btn:hover {
+  background-color: #357ae8;
+}
+
+.google-login-btn:focus {
+  outline: none;
+}

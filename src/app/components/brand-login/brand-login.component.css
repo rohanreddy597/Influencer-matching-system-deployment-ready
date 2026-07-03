@@ -1,0 +1,91 @@
+/* Centering and Background */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f3ff, #e0e7ff);
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Login Container */
+.login-container {
+  max-width: 500px; /* Smaller Card Size */
+  width: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+}
+
+/* Header Section */
+.login-container h1 {
+  font-size: 2em;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  margin-top: 5px;
+}
+
+input:focus {
+  border-color: #4f46e5;
+  outline: none;
+  background-color: #f0f8ff;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #4f46e5;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.2em;
+  color: white;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+}
+
+/* Error and Success Messages */
+.error-message, .success-message {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.error-message {
+  background-color: #ffdddd;
+  color: #d9534f;
+}
+
+.success-message {
+  background-color: #dff0d8;
+  color: #5bc0de;
+}

@@ -1,0 +1,58 @@
+<!-- Sidebar -->
+<app-side-bar [class.collapsed]="isSidebarCollapsed" class="sidebar">
+
+  <!-- Main Content Section (Collaboration Requests) -->
+  <div class="collaboration-requests-container" [class.collapsed]="isSidebarCollapsed">
+    <div *ngIf="loading" class="text-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <p class="text-dark">Loading your collaboration requests...</p>
+    </div>
+
+    <div *ngIf="!loading && collaborationRequests.length === 0" class="alert alert-info text-center">
+      You don't have any collaboration requests at the moment.
+    </div>
+
+    <h2 *ngIf="!loading && collaborationRequests.length > 0" class="text-center mb-4" 
+        style="color: #333; font-weight: 700; font-size: 2rem;">
+      Collaboration Requests
+    </h2>
+
+    <!-- Card Grid Layout -->
+    <div class="row">
+      <div *ngFor="let request of collaborationRequests" class="col-md-6">
+        <div class="card shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title">{{ request.brandId.brandName }} - Collaboration Request</h5>
+            <p class="card-text">{{ request.message }}</p>
+            <p class="card-text"><strong>Status:</strong> 
+              <span [ngClass]="{
+                'text-warning': request.status === 'pending', 
+                'text-success': request.status === 'accepted', 
+                'text-danger': request.status === 'rejected'
+              }">
+                {{ request.status | uppercase }}
+              </span>
+            </p>
+    
+            <div *ngIf="request.status === 'pending'" class="d-flex justify-content-start mt-3">
+              <button (click)="acceptRequest(request._id)" class="btn btn-success btn-sm">Accept</button>
+              <button (click)="rejectRequest(request._id)" class="btn btn-danger btn-sm ml-2">Reject</button>
+            </div>
+    
+            <div *ngIf="request.status !== 'pending'" class="mt-2">
+              <span class="badge" [ngClass]="{
+                'badge-success': request.status === 'accepted', 
+                'badge-danger': request.status === 'rejected'
+              }">
+                {{ request.status | uppercase }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</app-side-bar>

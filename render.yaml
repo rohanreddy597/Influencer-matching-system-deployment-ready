@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: influencer-matching-system
+    env: docker
+    region: oregon
+    plan: free
+    
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        scope: build
+        value: ""  # Set in Render dashboard
+      - key: SESSION_SECRET
+        scope: build
+        value: ""  # Set in Render dashboard
+      - key: CLIENT_ID
+        scope: build
+        value: ""  # Set in Render dashboard
+      - key: CLIENT_SECRET
+        scope: build
+        value: ""  # Set in Render dashboard

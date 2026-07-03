@@ -1,0 +1,50 @@
+<div class="d-flex">
+    <!-- Sidebar -->
+    <aside id="sidebar" [class.collapsed]="isCollapsed">
+        <div class="sidebar-logo">
+            <a href="#">Brand Management</a>
+        </div>
+        <!-- Sidebar Navigation -->
+        <ul class="sidebar-nav p-0">
+            
+            <li class="sidebar-item">
+                <a  (click)="navigatetoDashboard()" class="sidebar-link">
+                    <i class="lni lni-home"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a (click)="navigateToInfluencerList()" class="sidebar-link">
+                    <i class="lni lni-users"></i>
+                    <span>View Influencer List</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a (click)="navigateToAcceptedInfluencers()" class="sidebar-link">
+                    <i class="lni lni-checkmark-circle"></i>
+                    <span>Accepted Influencers</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a  (click)="logOut()" class="sidebar-link text-danger">
+                    <i class="lni lni-exit"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+        <!-- Sidebar Navigation Ends -->
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main">
+        <nav class="navbar navbar-expand">
+            <button class="toggler-btn" type="button" (click)="toggleSidebar()">
+                <i class="lni lni-text-align-left"></i>
+            </button>
+        </nav>
+        <main class="p-3">
+            <ng-content></ng-content>
+        </main>
+    </div>
+</div>
+

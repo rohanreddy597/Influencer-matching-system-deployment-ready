@@ -1,0 +1,82 @@
+/* Influencer Details Container */
+.influencer-details-container {
+  max-width: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Influencer Info Section */
+.influencer-info {
+  text-align: left;
+}
+
+.influencer-info img {
+  width: 100%;
+  max-width: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.influencer-info h3 {
+  font-size: 1.6em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.influencer-info p {
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Influencer Form Section */
+.influencer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.influencer-form label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.influencer-form .form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  font-size: 1.1em;
+}
+
+.register-btn {
+  font-size: 1.2em;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #4f46e5;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #4338ca;
+}
+
+/* Responsive Layout */
+@media (max-width: 767px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

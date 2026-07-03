@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influencer Login</title>
+
+  <!-- Add Font Awesome CDN for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-content">
+      <!-- Image on the left -->
+      <div class="image-container">
+        <img src="https://image.freepik.com/free-vector/illustration-vector-graphic-cartoon-character-influencer_516790-321.jpg" alt="Influencer Marketing" class="login-image">
+      </div>
+
+      <!-- Card on the right -->
+      <div class="card">
+        <h2>Influencer Login</h2>
+        <p>Login with Google to access your Influencer profile, manage your data, and connect with brands.</p>
+
+        <div class="google-login-container">
+          <button (click)="loginWithGoogle()" class="google-login-btn">
+            <i class="fab fa-google"></i> Login with Google
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

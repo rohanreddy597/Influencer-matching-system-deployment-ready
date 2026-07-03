@@ -1,0 +1,54 @@
+<app-brand-side-bar>
+  <div class="container-fluid py-4" style="background: linear-gradient(135deg, #f5f3ff, #e0e7ff); min-height: 100vh;">
+      <!-- Accepted Influencers Section -->
+      <div class="collaboration-requests-container">
+          <!-- Loading Indicator -->
+          <div *ngIf="loading" class="text-center">
+              <div class="spinner-border" role="status">
+                  <span class="sr-only">Loading...</span>
+              </div>
+              <p>Loading accepted influencers...</p>
+          </div>
+
+          <!-- No Data Available -->
+          <div *ngIf="!loading && acceptedInfluencers.length === 0" class="alert alert-info text-center">
+              No accepted influencers found.
+          </div>
+
+          <!-- Heading for Accepted Influencers -->
+          <h2 *ngIf="!loading && acceptedInfluencers.length > 0" class="text-center mb-4" 
+              style="color: black; font-weight: 700; font-size: 2rem;">
+              Accepted Influencers
+          </h2>
+
+          <!-- Card Grid Layout -->
+          <div class="row">
+              <div *ngFor="let influencer of acceptedInfluencers" class="col-md-6 mb-4">
+                  <div class="card shadow-sm border-0" 
+                      style="background-color: var(--card-bg, white); color: #000; border-radius: 12px;">
+                      <div class="card-body">
+                          <h5 class="card-title" 
+                              style="font-family: 'Arial', sans-serif; font-size: 1.4rem; font-weight: bold; color: var(--primary-hover, #4338ca);">
+                              {{ influencer.influencerName }} - Influencer
+                          </h5>
+                          <p class="card-text"><strong>Email:</strong> {{ influencer.influencerEmail }}</p>
+
+                          <!-- Status -->
+                          <p class="card-text">
+                              <strong>Status:</strong> 
+                              <span class="text-success">
+                                  Accepted
+                              </span>
+                          </p>
+
+                          <!-- Action buttons (if needed) -->
+                          <div *ngIf="influencer.status === 'accepted'" class="mt-2">
+                              <button class="btn btn-primary">View Profile</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</app-brand-side-bar>

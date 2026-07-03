@@ -1,0 +1,221 @@
+<div class="bg-white">
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-badge">
+        🚀 AI-Powered Influencer Matching Platform
+      </div>
+
+      <h1>
+        Connect Brands with the
+        <span class="highlight">Perfect Influencers</span>
+      </h1>
+
+      <p>
+        Discover creators, launch campaigns, and build successful partnerships
+        through intelligent influencer matching.
+      </p>
+
+      <div class="hero-actions">
+        <button
+          (click)="navigateToInfluencerLogin()"
+          class="hero-btn-primary">
+          Influencer Login
+        </button>
+
+        <button
+          (click)="navigateToBrandLogin()"
+          class="hero-btn-secondary">
+          Brand Login
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="stat-card">
+      <h2>10K+</h2>
+      <p>Influencers</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>500+</h2>
+      <p>Brands</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>1K+</h2>
+      <p>Campaigns</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>95%</h2>
+      <p>Match Accuracy</p>
+    </div>
+  </section>
+
+  <!-- Login Cards -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-2">
+          Choose Your Journey
+        </h2>
+        <p class="text-lg text-gray-600">
+          Whether you're a creator or a brand, we've got you covered.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Influencer Card -->
+        <div class="premium-card influencer-card">
+          <div class="card-icon">👤</div>
+
+          <h3>I'm an Influencer</h3>
+
+          <p>
+            Connect with leading brands, discover campaigns,
+            and monetize your influence.
+          </p>
+
+          <button
+            (click)="navigateToInfluencerLogin()"
+            class="card-btn influencer-btn">
+            Influencer Login
+          </button>
+        </div>
+
+        <!-- Brand Card -->
+        <div class="premium-card brand-card">
+          <div class="card-icon">💼</div>
+
+          <h3>I'm a Brand</h3>
+
+          <p>
+            Discover talented influencers, launch campaigns,
+            and grow your reach.
+          </p>
+
+          <button
+            (click)="navigateToBrandLogin()"
+            class="card-btn brand-btn">
+            Brand Login
+          </button>
+
+          <p class="signup-text">
+            New here?
+            <a routerLink="/signup">
+              Create Brand Account
+            </a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features-section">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <h2>Why Choose InfluencerHub?</h2>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>AI Matching</h3>
+          <p>
+            Find the perfect influencer-brand partnerships
+            using intelligent matching algorithms.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Campaign Management</h3>
+          <p>
+            Manage campaigns from creation to completion
+            in one centralized dashboard.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Analytics & Insights</h3>
+          <p>
+            Track performance, engagement,
+            and campaign ROI.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="workflow-section">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <h2>How It Works</h2>
+
+      <div class="workflow-grid">
+
+        <div class="workflow-card">
+          <h3>For Brands</h3>
+
+          <ul>
+            <li>Create Campaign</li>
+            <li>Find Influencers</li>
+            <li>Track Results</li>
+          </ul>
+        </div>
+
+        <div class="workflow-card">
+          <h3>For Influencers</h3>
+
+          <ul>
+            <li>Create Profile</li>
+            <li>Discover Opportunities</li>
+            <li>Collaborate & Earn</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to Start?</h2>
+
+    <p>
+      Join thousands of influencers and brands building
+      successful partnerships.
+    </p>
+
+    <button
+      (click)="navigateToBrandLogin()"
+      class="cta-btn">
+      Get Started Today
+    </button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h3>InfluencerHub</h3>
+      <p>
+        Connecting Brands and Influencers Through Smart Matching.
+      </p>
+      <p class="copyright">
+        © 2026 InfluencerHub. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+</div>
